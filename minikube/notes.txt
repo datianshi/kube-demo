@@ -1,0 +1,12 @@
+1. Deploy the web.yaml with cluster IP
+2. Query the cluster IP inside the cluster
+kubectl run utility --image datianshi/utilities -ti /bin/bash
+kubectl attach utility-86d7f49749-gvlkw -c utility -i -t
+3. node port demo
+4. enable ingress
+   minikube addons enable ingress
+   curl http://192.168.99.100 -H "Host: shaozhen.talk.utd.com"
+5. clean up
+kubectl delete -f ingress.yaml
+kubectl delete -f node_port.yaml
+kubectl delete -f web.yaml
